@@ -1,0 +1,1041 @@
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Para Edith 🌻</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+            overflow-x: hidden;
+            font-family: "Segoe UI", sans-serif;
+
+            background:
+                radial-gradient(circle at top, #fff9c4 0%, transparent 35%),
+                linear-gradient(135deg, #fff8dc, #ffe9a8, #fff3c4);
+
+            color: #5a3d00;
+        }
+
+        /* =========================
+           PÉTALOS
+        ========================== */
+
+        .petal {
+            position: fixed;
+            top: -30px;
+            font-size: 22px;
+            pointer-events: none;
+            animation: caer linear forwards;
+            z-index: 20;
+        }
+
+        @keyframes caer {
+
+            0% {
+                transform:
+                    translateY(-50px)
+                    rotate(0deg);
+                opacity: 1;
+            }
+
+            100% {
+                transform:
+                    translateY(110vh)
+                    rotate(720deg);
+                opacity: 0;
+            }
+        }
+
+        /* =========================
+           CONTENEDOR
+        ========================== */
+
+        .contenedor {
+            min-height: 100vh;
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+
+            padding: 40px 20px;
+
+            position: relative;
+        }
+
+        /* =========================
+           TÍTULO
+        ========================== */
+
+        .titulo {
+            text-align: center;
+
+            font-size: clamp(3rem, 9vw, 6rem);
+
+            color: #e8a800;
+
+            text-shadow:
+                3px 3px 0 #fff,
+                0 5px 15px rgba(0,0,0,.15);
+
+            animation: aparecer 1.5s ease;
+        }
+
+        .subtitulo {
+
+            margin-top: 10px;
+
+            font-size: clamp(1.1rem, 3vw, 1.5rem);
+
+            text-align: center;
+
+            color: #765200;
+
+            max-width: 700px;
+
+            line-height: 1.7;
+
+            animation: aparecer 2s ease;
+        }
+
+        @keyframes aparecer {
+
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* =========================
+           CORAZÓN
+        ========================== */
+
+        .corazon {
+
+            font-size: 45px;
+
+            margin: 15px;
+
+            animation: latido 1.2s infinite;
+        }
+
+        @keyframes latido {
+
+            0%,100% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.25);
+            }
+        }
+
+        /* =========================
+           RAMO
+        ========================== */
+
+        .ramo {
+
+            position: relative;
+
+            width: 300px;
+            height: 300px;
+
+            margin: 20px;
+
+            cursor: pointer;
+
+            transition: .4s;
+        }
+
+        .ramo:hover {
+            transform: scale(1.05);
+        }
+
+        .tallo {
+
+            position: absolute;
+
+            width: 8px;
+            height: 180px;
+
+            background: #4c9a45;
+
+            bottom: 25px;
+            left: 50%;
+
+            transform-origin: bottom;
+
+            border-radius: 10px;
+        }
+
+        .tallo:nth-child(1) {
+            transform: rotate(-25deg);
+        }
+
+        .tallo:nth-child(2) {
+            transform: rotate(-10deg);
+        }
+
+        .tallo:nth-child(3) {
+            transform: rotate(10deg);
+        }
+
+        .tallo:nth-child(4) {
+            transform: rotate(25deg);
+        }
+
+        /* =========================
+           FLORES
+        ========================== */
+
+        .flor {
+
+            position: absolute;
+
+            font-size: 75px;
+
+            filter:
+                drop-shadow(
+                    0 5px 5px rgba(0,0,0,.15)
+                );
+
+            animation:
+                balanceo 3s ease-in-out infinite;
+
+            transition: .3s;
+        }
+
+        .flor:hover {
+            transform: scale(1.3) rotate(10deg);
+        }
+
+        .flor:nth-of-type(5) {
+            top: 10px;
+            left: 100px;
+        }
+
+        .flor:nth-of-type(6) {
+            top: 60px;
+            left: 20px;
+        }
+
+        .flor:nth-of-type(7) {
+            top: 70px;
+            right: 20px;
+        }
+
+        .flor:nth-of-type(8) {
+            top: 100px;
+            left: 105px;
+        }
+
+        @keyframes balanceo {
+
+            0%,100% {
+                transform: rotate(-3deg);
+            }
+
+            50% {
+                transform: rotate(3deg);
+            }
+        }
+
+        /* =========================
+           BOTONES
+        ========================== */
+
+        .botones {
+
+            display: flex;
+
+            flex-wrap: wrap;
+
+            justify-content: center;
+
+            gap: 15px;
+
+            margin-top: 20px;
+        }
+
+        button {
+
+            border: none;
+
+            padding: 15px 25px;
+
+            border-radius: 50px;
+
+            background: #f7bd32;
+
+            color: #5a3d00;
+
+            font-size: 16px;
+
+            font-weight: bold;
+
+            cursor: pointer;
+
+            box-shadow:
+                0 6px 15px rgba(0,0,0,.15);
+
+            transition: .3s;
+        }
+
+        button:hover {
+
+            transform: translateY(-4px);
+
+            background: #ffd45c;
+
+            box-shadow:
+                0 10px 20px rgba(0,0,0,.2);
+        }
+
+        /* =========================
+           MENSAJE
+        ========================== */
+
+        #mensaje {
+
+            margin-top: 25px;
+
+            max-width: 700px;
+
+            min-height: 50px;
+
+            text-align: center;
+
+            font-size: 1.25rem;
+
+            line-height: 1.7;
+
+            color: #664700;
+        }
+
+        /* =========================
+           CARTA
+        ========================== */
+
+        .carta {
+
+            position: fixed;
+
+            inset: 0;
+
+            background: rgba(0,0,0,.6);
+
+            display: none;
+
+            align-items: center;
+
+            justify-content: center;
+
+            z-index: 100;
+
+            padding: 20px;
+        }
+
+        .carta.activa {
+            display: flex;
+        }
+
+        .papel {
+
+            background:
+                linear-gradient(
+                    #fffdf1,
+                    #fff8d8
+                );
+
+            max-width: 600px;
+
+            padding: 45px 35px;
+
+            border-radius: 20px;
+
+            box-shadow:
+                0 20px 60px rgba(0,0,0,.35);
+
+            text-align: center;
+
+            position: relative;
+
+            animation: abrirCarta .5s ease;
+        }
+
+        @keyframes abrirCarta {
+
+            from {
+                transform: scale(.5) rotate(-5deg);
+                opacity: 0;
+            }
+
+            to {
+                transform: scale(1) rotate(0);
+                opacity: 1;
+            }
+        }
+
+        .papel h2 {
+
+            color: #e6a400;
+
+            font-size: 2rem;
+
+            margin-bottom: 20px;
+        }
+
+        .papel p {
+
+            font-size: 1.2rem;
+
+            line-height: 1.8;
+
+            color: #634800;
+        }
+
+        .cerrar {
+            margin-top: 25px;
+        }
+
+        /* =========================
+           MARIPOSAS
+        ========================== */
+
+        .mariposa {
+
+            position: fixed;
+
+            font-size: 35px;
+
+            pointer-events: none;
+
+            z-index: 10;
+
+            animation:
+                volar 12s linear infinite;
+        }
+
+        .mariposa.uno {
+            left: 5%;
+            top: 30%;
+        }
+
+        .mariposa.dos {
+            right: 5%;
+            top: 60%;
+            animation-delay: 3s;
+        }
+
+        @keyframes volar {
+
+            0% {
+                transform:
+                    translate(0,0)
+                    rotate(0deg);
+            }
+
+            25% {
+                transform:
+                    translate(80px,-80px)
+                    rotate(15deg);
+            }
+
+            50% {
+                transform:
+                    translate(150px,20px)
+                    rotate(-15deg);
+            }
+
+            75% {
+                transform:
+                    translate(60px,100px)
+                    rotate(10deg);
+            }
+
+            100% {
+                transform:
+                    translate(0,0)
+                    rotate(0deg);
+            }
+        }
+
+        /* =========================
+           CORAZONES
+        ========================== */
+
+        .heart {
+
+            position: fixed;
+
+            bottom: -30px;
+
+            font-size: 25px;
+
+            pointer-events: none;
+
+            animation:
+                subir 4s linear forwards;
+
+            z-index: 50;
+        }
+
+        @keyframes subir {
+
+            0% {
+                transform:
+                    translateY(0)
+                    scale(.5);
+
+                opacity: 1;
+            }
+
+            100% {
+                transform:
+                    translateY(-110vh)
+                    scale(1.5);
+
+                opacity: 0;
+            }
+        }
+
+        /* =========================
+           PIE
+        ========================== */
+
+        footer {
+
+            margin-top: 35px;
+
+            text-align: center;
+
+            color: #806000;
+
+            font-size: 1rem;
+        }
+
+        /* =========================
+           CELULAR
+        ========================== */
+
+        @media(max-width:600px) {
+
+            .ramo {
+                transform: scale(.8);
+                margin: 0;
+            }
+
+            .ramo:hover {
+                transform: scale(.85);
+            }
+
+            .papel {
+                padding: 35px 20px;
+            }
+
+            .papel p {
+                font-size: 1rem;
+            }
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <!-- MARIPOSAS -->
+
+    <div class="mariposa uno">🦋</div>
+    <div class="mariposa dos">🦋</div>
+
+
+    <main class="contenedor">
+
+        <!-- TÍTULO -->
+
+        <h1 class="titulo">
+            Para Edith 🌻
+        </h1>
+
+        <p class="subtitulo">
+
+            Hay personas que llegan a nuestra vida
+            de una manera inesperada...
+
+            <br>
+
+            Y aunque los caminos cambien,
+            algunas personas siguen siendo especiales.
+
+        </p>
+
+
+        <div class="corazon">
+            💛
+        </div>
+
+
+        <!-- RAMO -->
+
+        <div
+            class="ramo"
+            onclick="sorpresaRamo()"
+            title="Haz clic en las flores"
+        >
+
+            <div class="tallo"></div>
+            <div class="tallo"></div>
+            <div class="tallo"></div>
+            <div class="tallo"></div>
+
+            <div class="flor">🌻</div>
+            <div class="flor">🌼</div>
+            <div class="flor">🌻</div>
+            <div class="flor">🌼</div>
+
+        </div>
+
+
+        <!-- MENSAJE -->
+
+        <div id="mensaje">
+
+            Edith, haz clic en el ramo 🌻
+
+        </div>
+
+
+        <!-- BOTONES -->
+
+        <div class="botones">
+
+            <button onclick="abrirCarta()">
+                💌 Abrir mi carta
+            </button>
+
+            <button onclick="crearCorazones()">
+                ❤️ Una sorpresa
+            </button>
+
+            <button onclick="cambiarMensaje()">
+                🌼 Otro mensaje
+            </button>
+
+            <button onclick="controlarMusica()">
+                🎵 Música
+            </button>
+
+        </div>
+
+
+        <footer>
+
+            Para una persona especial que conocí
+            en un lugar muy especial.
+
+            <br>
+
+            🌻 Feliz primavera, Edith 💛
+
+        </footer>
+
+    </main>
+
+
+    <!-- =========================
+         CARTA
+    ========================== -->
+
+    <div
+        class="carta"
+        id="carta"
+        onclick="cerrarCarta(event)"
+    >
+
+        <div class="papel">
+
+            <h2>
+                Para Edith 💛
+            </h2>
+
+            <p>
+
+                A veces me pongo a pensar en cómo
+                empezó todo...
+
+                <br><br>
+
+                Nos conocimos en una capilla,
+                en un momento que probablemente
+                ninguno de los dos imaginaba
+                que terminaría siendo parte de
+                nuestra historia.
+
+                <br><br>
+
+                Compartimos una etapa muy bonita,
+                y aunque con el tiempo nuestros
+                caminos cambiaron y hoy somos
+                amigos, me alegra muchísimo
+                conservar tu amistad.
+
+                <br><br>
+
+                Porque hay personas que,
+                independientemente de cómo cambie
+                la historia, siguen siendo
+                importantes.
+
+                <br><br>
+
+                Así que estas flores amarillas
+                son simplemente un pequeño detalle
+                para recordarte que te deseo
+                siempre cosas bonitas.
+
+                <br><br>
+
+                Que nunca te falten motivos
+                para sonreír, buenas personas
+                a tu alrededor y muchos momentos
+                felices.
+
+                <br><br>
+
+                <strong>
+                    Feliz primavera, Edith 🌻💛
+                </strong>
+
+            </p>
+
+            <button
+                class="cerrar"
+                onclick="cerrarCarta()"
+            >
+                Cerrar 💛
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- =========================
+         MÚSICA
+    ========================== -->
+
+    <!--
+        IMPORTANTE:
+
+        Coloca tu canción como:
+
+        musica.mp3
+
+        en la misma carpeta que este HTML.
+    -->
+
+    <audio
+        id="musica"
+        src="un-día-sin-sexo.mp3"
+        loop>
+    </audio>
+
+
+    <script>
+
+        /* =========================
+           MÚSICA
+        ========================== */
+
+        let musicaReproduciendo = false;
+
+
+        function reproducirMusica() {
+
+            const musica =
+                document.getElementById("musica");
+
+            musica.volume = 0.4;
+
+            musica.play();
+
+            musicaReproduciendo = true;
+        }
+
+
+        function controlarMusica() {
+
+            const musica =
+                document.getElementById("musica");
+
+
+            if (musicaReproduciendo) {
+
+                musica.pause();
+
+                musicaReproduciendo = false;
+
+            } else {
+
+                musica.volume = 0.4;
+
+                musica.play();
+
+                musicaReproduciendo = true;
+
+            }
+
+        }
+
+
+        /* =========================
+           MENSAJES
+        ========================== */
+
+        const mensajes = [
+
+            "Edith, me alegra que aquella casualidad de conocernos en una capilla haya terminado convirtiéndose en una amistad que todavía valoro mucho. 💛",
+
+            "Hay historias que cambian con el tiempo, pero eso no significa que dejen de ser importantes. 🌻",
+
+            "De novios a amigos, y de amigos a buenos amigos... lo bonito es que todavía podemos compartir buenos momentos. ❤️",
+
+            "La primavera trae flores amarillas, pero también es una buena oportunidad para agradecer por las personas que forman parte de nuestra vida. 🌼",
+
+            "Entre tantas personas que uno conoce en la vida, algunas terminan dejando una huella especial. Tú eres una de ellas, Edith. 💛"
+
+        ];
+
+
+        let indice = 0;
+
+
+        function cambiarMensaje() {
+
+            indice++;
+
+            if(indice >= mensajes.length) {
+                indice = 0;
+            }
+
+            escribirTexto(
+                mensajes[indice]
+            );
+
+        }
+
+
+        /* =========================
+           EFECTO ESCRITURA
+        ========================== */
+
+        function escribirTexto(texto) {
+
+            const elemento =
+                document.getElementById("mensaje");
+
+            elemento.textContent = "";
+
+            let i = 0;
+
+            const intervalo = setInterval(() => {
+
+                elemento.textContent += texto[i];
+
+                i++;
+
+                if(i >= texto.length) {
+
+                    clearInterval(intervalo);
+
+                }
+
+            }, 30);
+
+        }
+
+
+        /* =========================
+           RAMO
+        ========================== */
+
+        function sorpresaRamo() {
+
+            escribirTexto(
+                "Edith, estas flores son para ti. 🌻 Gracias por seguir siendo una persona especial en mi vida."
+            );
+
+            crearCorazones();
+
+            crearPetalos();
+
+            reproducirMusica();
+
+        }
+
+
+        /* =========================
+           CARTA
+        ========================== */
+
+        function abrirCarta() {
+
+            document
+                .getElementById("carta")
+                .classList.add("activa");
+
+        }
+
+
+        function cerrarCarta(event) {
+
+            if(
+                !event ||
+                event.target.id === "carta"
+            ) {
+
+                document
+                    .getElementById("carta")
+                    .classList.remove("activa");
+
+            }
+
+        }
+
+
+        /* =========================
+           CORAZONES
+        ========================== */
+
+        function crearCorazones() {
+
+            for(let i = 0; i < 20; i++) {
+
+                setTimeout(() => {
+
+                    const heart =
+                        document.createElement("div");
+
+                    heart.className = "heart";
+
+                    heart.textContent =
+                        Math.random() > .5
+                        ? "❤️"
+                        : "💛";
+
+                    heart.style.left =
+                        Math.random() * 100 + "vw";
+
+                    heart.style.animationDuration =
+                        (3 + Math.random() * 3) + "s";
+
+                    document.body.appendChild(heart);
+
+                    setTimeout(() => {
+
+                        heart.remove();
+
+                    }, 6000);
+
+                }, i * 100);
+
+            }
+
+        }
+
+
+        /* =========================
+           PÉTALOS
+        ========================== */
+
+        function crearPetalos() {
+
+            for(let i = 0; i < 15; i++) {
+
+                setTimeout(() => {
+
+                    const petal =
+                        document.createElement("div");
+
+                    petal.className = "petal";
+
+                    petal.textContent = "🌼";
+
+                    petal.style.left =
+                        Math.random() * 100 + "vw";
+
+                    petal.style.fontSize =
+                        (15 + Math.random() * 20) + "px";
+
+                    petal.style.animationDuration =
+                        (4 + Math.random() * 5) + "s";
+
+                    document.body.appendChild(petal);
+
+                    setTimeout(() => {
+
+                        petal.remove();
+
+                    }, 10000);
+
+                }, i * 150);
+
+            }
+
+        }
+
+
+        /* =========================
+           PÉTALOS AUTOMÁTICOS
+        ========================== */
+
+        setInterval(() => {
+
+            const petal =
+                document.createElement("div");
+
+            petal.className = "petal";
+
+            petal.textContent = "🌼";
+
+            petal.style.left =
+                Math.random() * 100 + "vw";
+
+            petal.style.animationDuration =
+                (6 + Math.random() * 5) + "s";
+
+            document.body.appendChild(petal);
+
+            setTimeout(() => {
+
+                petal.remove();
+
+            }, 12000);
+
+        }, 1200);
+
+
+    </script>
+
+</body>
+
+</html>
